@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kkotbot-docs.kro.kr">
+    <meta property="og:url" content="">
     <meta property="og:title" content="KakaotalkBot Docs">
     <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
-    <meta property="og:image" content="https://kkotbot-docs.kro.kr/img/grp_img.jpg">
+    <meta property="og:image" content="/img/grp_img.jpg">
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/jquery-ui.js"></script>
     <script type="text/javascript" src="script/animation.js"></script>
@@ -31,7 +31,7 @@
 
 <body>
     <header>
-        <a href='https://kkotbot-docs.kro.kr/'><img id="kkotb_rfnc" src="img/docs.png"></a>
+        <a href='/'><img id="kkotb_rfnc" src="img/docs.png"></a>
         <div id="wrap">
             <form action="" autocomplete="off">
                 <input id="search" data-bg="#ff0d86" name="search" type="text" placeholder="유저 검색">
@@ -87,7 +87,7 @@
             } else {
                 $(function() {
                     firebase.database().ref(firebase.auth().currentUser.uid).once('value').then(function(snapshot) {
-                        if (location.href.startsWith('https://kkotbot-docs.kro.kr/my?search=')) {} else {
+                        if (location.href.startsWith('/my?search=')) {} else {
                             document.title = snapshot.val().nickname;
                             document.getElementById('profile').innerHTML += '<img style=\"border-radius: 50%; box-shadow: 0rem 0rem 0.4rem 0rem #b1b1b1; border-radius: 3rem;\" height=\"100px\" src=\"' + snapshot.val().profile + '\"/>'
                             /*

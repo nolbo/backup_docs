@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kkotbot-docs.kro.kr">
+    <meta property="og:url" content="">
     <meta property="og:title" content="KakaotalkBot Docs">
     <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
-    <meta property="og:image" content="https://kkotbot-docs.kro.kr/img/grp_img.jpg">
+    <meta property="og:image" content="/img/grp_img.jpg">
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/jquery-ui.js"></script>
     <script type="text/javascript" src="script/animation.js"></script>
@@ -31,7 +31,7 @@
 
 <body>
     <header>
-        <a href='https://kkotbot-docs.kro.kr/'><img id="kkotb_rfnc" src="img/docs.png"></a>
+        <a href='/'><img id="kkotb_rfnc" src="img/docs.png"></a>
         <div id="wrap">
             <form action="" autocomplete="off">
                 <input id="search" data-bg="#ff0d86" name="search" type="text" placeholder="계시글 검색">
@@ -128,8 +128,8 @@
                     });
                 }
 
-                if (location.href.startsWith('https://kkotbot-docs.kro.kr/Q&A?id=')) {
-                    postRef.doc(location.href.substring('https://kkotbot-docs.kro.kr/Q&A?id='.length)).get().then(function(doc) {
+                if (location.href.startsWith('/Q&A?id=')) {
+                    postRef.doc(location.href.substring('/Q&A?id='.length)).get().then(function(doc) {
                         if (doc.exists) {
                             //내용표시
 
@@ -165,15 +165,15 @@
                             ul.appendChild(li);
                             if (item.data.comments.length != 0) {
                                 if (['MKNCtE68DyfpXBAkhBWMiN0CWLC2'].indexOf(item.data.by) != -1 && item.data.title.startsWith('[공지]')) {
-                                    li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"https://kkotbot-docs.kro.kr/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title.substring('[공지]'.length) + '</a></div>';
+                                    li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title.substring('[공지]'.length) + '</a></div>';
                                 } else {
-                                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title + '</a>';
+                                    li.innerHTML += '<a href=\"/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title + '</a>';
                                 }
                             } else {
                                 if (['MKNCtE68DyfpXBAkhBWMiN0CWLC2'].indexOf(item.data.by) != -1 && item.data.title.startsWith('[공지]')) {
-                                    li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"https://kkotbot-docs.kro.kr/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title.substring('[공지]'.length) + '[' + item.data.comments.length + ']</a></div>';
+                                    li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title.substring('[공지]'.length) + '[' + item.data.comments.length + ']</a></div>';
                                 } else {
-                                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title + '[' + item.data.comments.length + ']</a>';
+                                    li.innerHTML += '<a href=\"/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title + '[' + item.data.comments.length + ']</a>';
                                 }
                             }
                             $('ul').css('text-align', 'left');

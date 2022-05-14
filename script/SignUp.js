@@ -115,7 +115,7 @@ $(function() {
                             profile: $('img#profile').attr('src')
                         }).then(function() {
                             firebase.auth().signOut().then(function() {
-                                location.href = 'https://kkotbot-docs.kro.kr/login';
+                                location.href = '/login';
                             })
                         });
                     });

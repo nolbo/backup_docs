@@ -21,10 +21,10 @@ function login() {
                         alert('발송된 이메일을 인증해주세요');
                         firebase.auth().singOut();
                     }else{
-                        if (location.href.startsWith('https://kkotbot-docs.kro.kr/login?redirect=')) {
-                            location.href = location.href.substring('https://kkotbot-docs.kro.kr/login?redirect='.length); //로그인 후 이동
+                        if (location.href.startsWith('/login?redirect=')) {
+                            location.href = location.href.substring('/login?redirect='.length); //로그인 후 이동
                         } else {
-                            location.href = 'https://kkotbot-docs.kro.kr/'; //로그인 후 이동
+                            location.href = '/'; //로그인 후 이동
                         }
                     }
                 }).catch(function(error) {
@@ -41,10 +41,10 @@ function login() {
 $(function() {
     firebase.auth().onAuthStateChanged(user => {
         if (!!user) {
-            if (location.href.startsWith('https://kkotbot-docs.kro.kr/login?redirect=')) {
-                location.href = location.href.substring('https://kkotbot-docs.kro.kr/login?redirect='.length); //로그인 후 이동
+            if (location.href.startsWith('/login?redirect=')) {
+                location.href = location.href.substring('/login?redirect='.length); //로그인 후 이동
             } else {
-                location.href = 'https://kkotbot-docs.kro.kr/'; //로그인 후 이동
+                location.href = '/'; //로그인 후 이동
             }
         } else {
             login();
